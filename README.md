@@ -1,6 +1,6 @@
 # quickmetrics-laravel
 
-This is a basic wrapper package for sending events to the [Quickmetrics](https://quickmetrics.io) API. It exposes a single function, `qm()`, that you can use across your Laravel controllers, models, and views.
+This is a basic wrapper package for sending events to the [Quickmetrics](https://quickmetrics.io) API. It exposes a single class function, `qm()`, that you can use across your Laravel controllers, models, and views.
 
 ## Installation
 
@@ -18,25 +18,9 @@ php artisan vendor:publish --provider="Larahawk\Watcher\LarahawkServiceProvider"
 
 ## Usage
 
-In your application, use `qm(name, value, dimension)` to send an event to your Quickmetrics dashboard. The description for the three parameters in this method are listed below:
+To send a single event in your application, use `qm()->event(name, value, dimension)`. Name is a required string, value a required float, and dimension is an optional string that defaults to null.
 
-### name
-
-- Type: `string`
-- Required: `true`
-- Description: `The name of the metric being recorded`
-
-### value
-
-- Type: `float`
-- Required: `true`
-- Description: `The numeric/decimal value of the metric being recorded`
-
-### dimension
-
-- Type: `string`
-- Required: `false`
-- Description: `An associated identifier to be shown in connection with your metric value`
+You can also send batch events with `qm()->batch(items)`. See the [documentation on batching](https://app.quickmetrics.io/docs/send-events/batching) for more details about how your items array should be formatted.
 
 ## More Info
 
