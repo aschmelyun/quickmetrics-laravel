@@ -16,6 +16,28 @@ QUICKMETRICS_API_KEY={your-api-key}
 php artisan vendor:publish --provider="Larahawk\Watcher\LarahawkServiceProvider"
 ```
 
+## Usage
+
+In your application, use `qm(name, value, dimension)` to send an event to your Quickmetrics dashboard. The description for the three parameters in this method are listed below:
+
+### name
+
+- Type: `string`
+- Required: `true`
+- Description: `The name of the metric being recorded`
+
+### value
+
+- Type: `float`
+- Required: `true`
+- Description: `The numeric/decimal value of the metric being recorded`
+
+### dimension
+
+- Type: `string`
+- Required: `false`
+- Description: `An associated identifier to be shown in connection with your metric value`
+
 ## More Info
 
 This package was developed as part of a video tutorial I've published on YouTube for getting started with Laravel package development. Check it out [here](https://www.youtube.com/watch?v=Hr8Zc2Zkcjg) if you want a behind-the-scenes look at how this was built.
