@@ -1,0 +1,29 @@
+{
+    "name": "aschmelyun/quickmetrics-laravel",
+    "description": "Laravel wrapper package for the Quickmetrics.io API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew Schmelyun",
+            "email": "schmelyun@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aschmelyun\\Quickmetrics\\": "src/"
+        },
+        "files": [
+            "src/Helpers/qm.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aschmelyun\\Quickmetrics\\QuickmetricsServiceProvider"
+            ]
+        }
+    }
+}
